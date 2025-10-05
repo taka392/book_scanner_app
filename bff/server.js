@@ -6,6 +6,8 @@ const Minio = require('minio');
 const app = express();
 const port = 8080;
 
+
+
 // CORS設定
 app.use(cors());
 app.use(express.json());
