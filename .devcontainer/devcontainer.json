@@ -1,0 +1,32 @@
+// For format details, see https://aka.ms/devcontainer.json.
+{
+  "name": "Flutter + Node22 + Supabase",
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "node22-supa",
+  "workspaceFolder": "/workspaces/book_scanner_app",
+
+  // 🧩 DevContainer機能: docker-in-docker (必要なら)
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {}
+  },
+
+  // 🔌 Supabaseでよく使うポート転送
+  "forwardPorts": [54321, 54322],
+
+  // 🌍 環境変数をセット（ローカル用）
+  "containerEnv": {
+    "SUPABASE_URL": "http://localhost:54321",
+    "SUPABASE_ANON_KEY": "your-anon-key"
+  },
+
+  // 🧰 VSCode拡張などを自動導入
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "Dart-Code.flutter",
+        "Dart-Code.dart-code",
+        "supabase.supabase-vscode",
+        "mhutchie.git-graph"
+      ]
+    }
+  }}

@@ -1,0 +1,16 @@
+version: '3.8'
+services:
+  node22-supa:
+    build: .
+    stdin_open: true
+    working_dir: '/workspaces/book_scanner_app'
+    ports:
+      - 8787:8787
+      - 54321:54321
+      - 54322:54322
+    volumes:
+      - ../:/workspaces/book_scanner_app
+    tty: true
+    privileged: true
+    environment:
+      - PATH=/root/.local/bin:/opt/flutter/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
